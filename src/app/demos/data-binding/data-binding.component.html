@@ -3,7 +3,11 @@
     <p>Numero de cliques: {{clickCount}}</p>
     <br><br><br>
     <h3>Property-Binding</h3>
-    <button class="btn-warning" [disabled]="clickCount >=10" (click)="warningCount()">Info</button>
+    <button class="btn-warning" [disabled]="clickCount >=10" (click)="warningCount()" [ngClass]="{
+        'btn-primary': clickCount < 5,
+        'btn-warning': clickCount >=5,
+        'btn-danger': clickCount >=8
+    }">Info</button>
     <br><br>
     <img [src]="imageURL" height="50px" width="50px" alt="">
     <br><br>
