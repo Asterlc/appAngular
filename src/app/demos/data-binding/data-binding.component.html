@@ -4,7 +4,8 @@
     <br><br><br>
     <h3>Property-Binding</h3>
     <button class="btn-warning" [disabled]="clickCount >=10" (click)="warningCount()" [ngClass]="{
-        'btn-primary': clickCount < 5,
+        'btn-primary': clickCount < 1,
+        'btn-success': clickCount >=1,
         'btn-warning': clickCount >=5,
         'btn-danger': clickCount >=8
     }">Info</button>
