@@ -1,6 +1,7 @@
 import { Routes } from "@angular/router";
 import { AboutComponent } from "./about/about/about.component";
 import { ContactComponent } from "./about/contact/contact.component";
+import { DataBindingComponent } from "./demos/data-binding/data-binding.component";
 import { HomeComponent } from "./home/home.component";
 
 export const rootRoutesConfig: Routes = [
@@ -20,5 +21,9 @@ export const rootRoutesConfig: Routes = [
     {
         path: 'about',
         component: AboutComponent
+    },
+    {
+        path: 'features-data-binding',
+        component: DataBindingComponent
     }
 ];
