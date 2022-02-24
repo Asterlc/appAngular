@@ -10,6 +10,7 @@ import { ContactComponent } from './about/contact/contact.component';
 import { rootRoutesConfig } from './app.routes';
 import { APP_BASE_HREF } from '@angular/common';
 import { DataBindingComponent } from './demos/data-binding/data-binding.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { DataBindingComponent } from './demos/data-binding/data-binding.componen
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     [RouterModule.forRoot(rootRoutesConfig, { useHash: false })]
   ],
   providers: [

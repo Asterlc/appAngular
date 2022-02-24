@@ -1,0 +1,28 @@
+<div class="main-container">
+    <h3>Interpolation</h3>
+    <p>Numero de cliques: {{clickCount}}</p>
+    <br><br><br>
+    <h3>Property-Binding</h3>
+    <button class="btn-warning" [disabled]="clickCount >=10" (click)="warningCount()">Info</button>
+    <br><br>
+    <img [src]="imageURL" height="50px" width="50px" alt="">
+    <br><br>
+    <h3>Event-Binding</h3>
+    <button class="btn-primary" (click)="increaseCount()" style="margin-right:5px">Contador</button>
+    <button class="btn-secondary" (click)="resetCount()">Resetar</button>
+    <br><br>
+    <h3>Two-way Data-Binding</h3>
+    <!-- <input id="customText" type="text" (keyup)="keyUp($event)" placeholder="Digite qualquer coisa...">
+    <br>
+    <label>Seu texto: {{customText}}</label> -->
+
+    <!-- <input type="text" [ngModel]="customText" (ngModelChange)=" customText = $event">
+    <button class="btn-secondary" (click)="refreshCustomText()" style="margin-left: 5px;">Limpar</button>
+    <br>
+    <label> Seu texto é: {{customText}}</label> -->
+
+    <input type="text" [(ngModel)]="customText">
+    <button class="btn-secondary" (click)="refreshCustomText()" style="margin-left: 5px;">Limpar</button>
+    <br>
+    <label> Seu texto é: {{customText}}</label>
+</div>
