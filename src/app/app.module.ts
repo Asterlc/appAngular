@@ -15,6 +15,7 @@ import { HttpClientModule } from "@angular/common/http";
 
 
 import { ProductsService } from './services/products.service';
+import { ProductsListComponent } from './products/products-list/products-list.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ProductsService } from './services/products.service';
     FooterComponent,
     AboutComponent,
     ContactComponent,
-    DataBindingComponent
+    DataBindingComponent,
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,
