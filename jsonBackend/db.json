@@ -52,8 +52,8 @@
             "id":6,
             "originalName":"Galaxy S10",
             "listPrice":1800.98,
-            "promotion": false,
-            "promotionPrice":0, 
+            "promotion": true,
+            "promotionPrice":1500.00, 
             "image": "celular.jpg"
         }
     ]
