@@ -3,6 +3,6 @@ export class Product {
     "originalName": string;
     "listPrice": string;
     "promotion": boolean;
-    "promotioPrice": string;
+    "promotionPrice": string;
     "image": string
 }
