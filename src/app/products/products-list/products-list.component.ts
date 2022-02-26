@@ -22,5 +22,4 @@ export class ProductsListComponent implements OnInit {
       error => console.log(error)
       );
   }
-
 }

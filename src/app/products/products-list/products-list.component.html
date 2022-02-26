@@ -3,7 +3,7 @@
     <div class="row text-center"> 
         <div *ngFor="let product of products" class="col-md-4" style="padding-bottom: 30px;">
             <div class="card h-100">
-                <a class="text-decoration-none" [routerLink]="['/produto-detalhe', product.id]">
+                <a class="text-decoration-none" [routerLink]="['/produto-detail', product.id]">
                     <div style="align-content:center;">
                         <img src="/assets/{{ product.image }}" height="164px" width="253px" alt="">
                     </div>
@@ -12,7 +12,7 @@
 
                 <div [ngSwitch]="product.promotion">
                     <p *ngSwitchCase="true">Promoção!</p>
-                    <p *ngSwitchCase="false">Por apenas:</p>
+                    <p *ngSwitchCase="false">Por apenas: {{product.promotion ? product.promotionPrice : product.listPrice}}</p>
                 </div>
 
                 <div *ngIf="product.promotion" class="card-body">

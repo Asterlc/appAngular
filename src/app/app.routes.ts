@@ -30,5 +30,9 @@ export const rootRoutesConfig: Routes = [
     {
         path: 'product-list',
         component: ProductsListComponent
+    },
+    {
+        path: 'product-detail/:id',
+        component: ProductsListComponent
     }
 ];
