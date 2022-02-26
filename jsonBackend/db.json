@@ -28,8 +28,8 @@
             "id":3,
             "originalName":"Laptop Asus",
             "listPrice":3800.98,
-            "promotion": false,
-            "promotionPrice":0, 
+            "promotion": true,
+            "promotionPrice":3200.00, 
             "image": "laptop.jpg"
         },
         {
