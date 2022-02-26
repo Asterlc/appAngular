@@ -12,7 +12,7 @@
 
                 <div [ngSwitch]="product.promotion">
                     <p *ngSwitchCase="true" style="font-size: 32px; color: red;">Promoção!</p>
-                    <p *ngSwitchCase="false">Por apenas: {{product.promotion ? product.promotionPrice : product.listPrice}}</p>
+                    <!-- <p *ngSwitchCase="false">Por apenas: {{product.promotion ? product.promotionPrice : product.listPrice}}</p> -->
                 </div>
 
                 <div *ngIf="product.promotion" class="card-body">
