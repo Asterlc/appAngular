@@ -1,0 +1,60 @@
+{
+    "products":[
+        {
+            "id":1,
+            "originalName":"Mouse Microsoft",
+            "listPrice":15.98,
+            "promotion": false,
+            "promotioPrice":0, 
+            "image": "mouse.jpg"
+        },
+        {
+            "id":1,
+            "originalName":"Teclado Microsoft",
+            "listPrice":38.98,
+            "promotion": false,
+            "promotioPrice":0, 
+            "image": "teclado.jpg"
+        },
+        {
+            "id":3,
+            "originalName":"Monitor Samsung",
+            "listPrice":15.98,
+            "promotion": false,
+            "promotioPrice":0, 
+            "image": "monitor.jpg"
+        },
+        {
+            "id":3,
+            "originalName":"Laptop Asus",
+            "listPrice":3800.98,
+            "promotion": false,
+            "promotioPrice":0, 
+            "image": "laptop.jpg"
+        },
+        {
+            "id":4,
+            "originalName":"Headset Microsoft",
+            "listPrice":10.98,
+            "promotion": false,
+            "promotioPrice":0, 
+            "image": "headset.jpg"
+        },
+        {
+            "id":5,
+            "originalName":"Webcam Logitech",
+            "listPrice":90.98,
+            "promotion": false,
+            "promotioPrice":0, 
+            "image": "webcam.jpg"
+        },
+        {
+            "id":6,
+            "originalName":"Galaxy S10",
+            "listPrice":1800.98,
+            "promotion": false,
+            "promotioPrice":0, 
+            "image": "celular.jpg"
+        }
+    ]
+}
