@@ -11,6 +11,10 @@ import { rootRoutesConfig } from './app.routes';
 import { APP_BASE_HREF } from '@angular/common';
 import { DataBindingComponent } from './demos/data-binding/data-binding.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
+
+
+import { ProductsService } from './services/products.service';
 
 
 @NgModule({
@@ -25,11 +29,13 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     [RouterModule.forRoot(rootRoutesConfig, { useHash: false })]
   ],
   providers: [
-    {provide: APP_BASE_HREF, useValue:'/'}
+    { provide: APP_BASE_HREF, useValue: '/' },
+    ProductsService
   ],
   bootstrap: [AppComponent]
 })
