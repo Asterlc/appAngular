@@ -10,7 +10,10 @@ import { ContactComponent } from './about/contact/contact.component';
 import { rootRoutesConfig } from './app.routes';
 import { APP_BASE_HREF } from '@angular/common';
 import { DataBindingComponent } from './demos/data-binding/data-binding.component';
-import { FormsModule } from '@angular/forms';
+import {
+  FormsModule,
+  ReactiveFormsModule
+} from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 
 import { registerLocaleData } from '@angular/common';
@@ -19,6 +22,7 @@ registerLocaleData(localePT);
 
 import { ProductsService } from './services/products.service';
 import { ProductsListComponent } from './products/products-list/products-list.component';
+import { RegisterComponent } from './demos/reactForms/register/register.component';
 
 
 @NgModule({
@@ -30,12 +34,14 @@ import { ProductsListComponent } from './products/products-list/products-list.co
     AboutComponent,
     ContactComponent,
     DataBindingComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     [RouterModule.forRoot(rootRoutesConfig, { useHash: false })]
   ],
   providers: [

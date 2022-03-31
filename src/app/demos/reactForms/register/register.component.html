@@ -1,0 +1,52 @@
+<div class="container main-container">
+    <h4>Demo Cadastro</h4>
+    <hr />
+
+    <form novalidate (ngSubmit)="createUser()" [formGroup]="registerForm">
+        <div class="form-horinzontal">
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="name">Nome completo</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="name" placeholder="Nome (Requerido)"
+                        formControlName="name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="document">CPF</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="document" placeholder="CPF (Requerido)"
+                        formControlName="document">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="nome">E-mail</label>
+                <div class="col-md-10">
+                    <input type="email" class="form-control" id="email" placeholder="E-mail (Requerido)"
+                        formControlName="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="password">Senha</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="password" placeholder="Senha (Requerido)"
+                        formControlName="passsword">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="passwordConfirm">Confirmar senha</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="passwordConfirm"
+                        placeholder="Confirmar senha (Requerido)" formControlName="passwordConfirm">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-4 cold-md-offset-2">
+                    <span>
+                        <button class="btn btn-success" id="Registrar" type="submit">Registrar</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
