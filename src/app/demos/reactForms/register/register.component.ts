@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { User } from 'src/app/models/userModel';
 
 @Component({
   selector: 'app-register',
@@ -7,14 +8,15 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registerForm: FormGroup
+  registerForm: FormGroup;
+  user: User;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.registerForm =this.fb.group({
+    this.registerForm = this.fb.group({
       name: [''],
-      document:[''],
+      document: [''],
       email: [''],
       password: [''],
       passwordConfirm: [''],
@@ -22,7 +24,7 @@ export class RegisterComponent implements OnInit {
   }
 
   createUser() {
-    let x = this.registerForm.value;
+    this.user = Object.assign({}, this.user, this.registerForm.value);
   }
 
 }
