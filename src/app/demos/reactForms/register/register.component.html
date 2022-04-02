@@ -8,30 +8,21 @@
                 <label class="col-md-2 control-label" for="name">Nome completo</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="name" placeholder="Nome (Requerido)"
-                        formControlName="name"
-                        [ngClass]="{'is-invalid': registerForm.get('name')?.errors && (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)}">
-                    <span class="text-danger"
-                        *ngIf="registerForm.get('name')?.errors?.required && (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)">
-                        <p>Campo obrigatório</p>
-                    </span>
-                    <span class="text-danger"
-                        *ngIf="registerForm.get('name')?.errors?.minlength && (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)">
-                        <p>No mínimo 5 caracteres</p>
+                        formControlName="name" [ngClass]="{'is-invalid': displayMessage.name}">
+                    <span class="text-danger" *ngIf="displayMessage.name">
+                        <!-- Renderiza como HTML puro -->
+                        <p [innerHTML]="displayMessage.name"></p>
                     </span>
                 </div>
             </div>
-            <div class="form-group">
+            <div class=" form-group">
                 <label class="col-md-2 control-label" for="document">CPF</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="document" placeholder="CPF (Requerido)"
-                        formControlName="document" cpf [textMask]="{mask: MASKS.cpf.textMask}">
-                    <span class="text-danger"
-                        *ngIf="registerForm.get('document')?.errors?.required && (registerForm.get('document')?.dirty || registerForm.get('document')?.touched) ">
-                        <p>Campo obrigatório</p>
-                    </span>
-                    <span class="text-danger"
-                        *ngIf="registerForm.get('document')?.errors?.cpf && (registerForm.get('document')?.dirty || registerForm.get('document')?.touched) ">
-                        <p>CPF inválido</p>
+                        formControlName="document" cpf [textMask]="{mask: MASKS.cpf.textMask}"
+                        [ngClass]="{'is-invalid': displayMessage.document}">
+                    <span class="text-danger" *ngIf="displayMessage.document">
+                        <p [innerHTML]="displayMessage.document"></p>
                     </span>
                 </div>
             </div>
@@ -39,14 +30,9 @@
                 <label class="col-md-2 control-label" for="nome">E-mail</label>
                 <div class="col-md-10">
                     <input type="email" class="form-control" id="email" placeholder="E-mail (Requerido)"
-                        formControlName="email">
-                    <span class="text-danger"
-                        *ngIf="registerForm.get('email')?.errors?.required && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched) ">
-                        <p>Campo obrigatório</p>
-                    </span>
-                    <span class="text-danger"
-                        *ngIf="registerForm.get('email')?.errors?.email && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched) ">
-                        <p>E-mail no formato inválido</p>
+                        formControlName="email" [ngClass]="{'is-invalid': displayMessage.email}">
+                    <span class="text-danger">
+                        <p [innerHTML]="displayMessage.email"></p>
                     </span>
                 </div>
             </div>
@@ -54,14 +40,9 @@
                 <label class="col-md-2 control-label" for="password">Senha</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="password" placeholder="Senha (Requerido)"
-                        formControlName="password">
-                    <span class="text-danger"
-                        *ngIf="registerForm.get('password')?.errors?.required && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched) ">
-                        <p>Campo obrigatório</p>
-                    </span>
-                    <span class="text-danger"
-                        *ngIf="registerForm.get('password')?.errors?.rangeLength">
-                        <p>Senha deve conter entre 5-15</p>
+                        formControlName="password" [ngClass]="{'is-invalid': displayMessage.password}">
+                    <span class="text-danger" *ngIf="displayMessage.password">
+                        <p [innerHTML]="displayMessage.password"></p>
                     </span>
                 </div>
             </div>
@@ -69,14 +50,10 @@
                 <label class="col-md-2 control-label" for="passwordConfirm">Confirmar senha</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="passwordConfirm"
-                        placeholder="Confirmar senha (Requerido)" formControlName="passwordConfirm">
-                    <span class="text-danger"
-                        *ngIf="registerForm.get('passwordConfirm')?.errors?.required && (registerForm.get('passwordConfirm')?.dirty || registerForm.get('passwordConfirm')?.touched) ">
-                        <p>Campo obrigatório</p>
-                    </span>
-                    <span class="text-danger"
-                        *ngIf="registerForm.get('passwordConfirm')?.errors?.equalTo && (registerForm.get('passwordConfirm')?.dirty || registerForm.get('passwordConfirm')?.touched) ">
-                        <p>Senhas estão diferentes</p>
+                        placeholder="Confirmar senha (Requerido)" formControlName="passwordConfirm"
+                        [ngClass]="{'is-invalid': displayMessage.passwordConfirm}">
+                    <span class="text-danger" *ngIf="displayMessage.passwordConfirm">
+                        <p [innerHTML]="displayMessage.passwordConfirm"></p>
                     </span>
                 </div>
             </div>
