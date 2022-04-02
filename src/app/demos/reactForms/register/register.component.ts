@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgBrazilValidators } from 'ng-brazil';
+import { utilsBr } from 'js-brasil';
 import { User } from 'src/app/models/userModel';
+import { CustomValidators } from 'ng2-validation';
 
 @Component({
   selector: 'app-register',
@@ -11,18 +14,22 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   user: User;
   formResult: string;
+  MASKS = utilsBr.MASKS;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    let pwd = new FormControl('', [Validators.required, CustomValidators.rangeLength([6, 15])]);
+    let confirmPWD = new FormControl('', [Validators.required, CustomValidators.rangeLength([6, 15]), CustomValidators.equalTo(pwd)]);
+
     this.registerForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(5)]],
-      document: ['', [Validators.required, Validators.maxLength(11)]],
+      name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(150)]],
+      document: ['', [Validators.required, NgBrazilValidators.cpf]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-      passwordConfirm: ['', Validators.required],
+      password: pwd,
+      passwordConfirm: confirmPWD,
     })
-    // console.log('this.registerForm', this.registerForm)
+    console.log('this.registerForm', this.registerForm)
   }
 
   createUser() {

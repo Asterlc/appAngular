@@ -10,10 +10,7 @@ import { ContactComponent } from './about/contact/contact.component';
 import { rootRoutesConfig } from './app.routes';
 import { APP_BASE_HREF } from '@angular/common';
 import { DataBindingComponent } from './demos/data-binding/data-binding.component';
-import {
-  FormsModule,
-  ReactiveFormsModule
-} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 
 import { registerLocaleData } from '@angular/common';
@@ -24,7 +21,9 @@ import { ProductsService } from './services/products.service';
 import { ProductsListComponent } from './products/products-list/products-list.component';
 import { RegisterComponent } from './demos/reactForms/register/register.component';
 
-
+import { NgBrazil } from 'ng-brazil';
+import { TextMaskModule } from 'angular2-text-mask';
+import { CustomFormsModule } from 'ng2-validation';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +41,9 @@ import { RegisterComponent } from './demos/reactForms/register/register.componen
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgBrazil,
+    TextMaskModule,
+    CustomFormsModule,
     [RouterModule.forRoot(rootRoutesConfig, { useHash: false })]
   ],
   providers: [
