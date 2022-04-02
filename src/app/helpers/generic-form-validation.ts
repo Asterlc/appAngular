@@ -1,25 +1,24 @@
 import { FormGroup } from "@angular/forms";
 
 export class GenericFormValidator {
-    constructor(private ValidationMessages: ValidationMessages) { }
+    constructor(private validationMessages: ValidationMessages) { }
 
     processMessage(container: FormGroup): { [key: string]: string } {
         let messages: any = {};
-        
         for (let controlKey in container.controls) {
             if (container.controls.hasOwnProperty(controlKey)) {
                 let c = container.controls[controlKey];
-
                 if (c instanceof FormGroup) {
                     let childMessages = this.processMessage(c);
+                    console.log('childMessages', childMessages)
                     Object.assign(messages, childMessages);
-                } else if (this.ValidationMessages[controlKey]) {
+                } else if (this.validationMessages[controlKey]) {
                     messages[controlKey] = '';
 
                     if ((c.dirty || c.touched) && c.errors) {
                         Object.keys(c.errors).map(messageKey => {
-                            if (this.ValidationMessages[controlKey][messageKey]) {
-                                messages[controlKey] += this.ValidationMessages[controlKey][messageKey];
+                            if (this.validationMessages[controlKey][messageKey]) {
+                                messages[controlKey] += this.validationMessages[controlKey][messageKey];
                             }
                         });
                     }

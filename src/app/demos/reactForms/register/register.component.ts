@@ -65,7 +65,6 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       password: pwd,
       passwordConfirm: confirmPWD,
     })
-    console.log('this.registerForm', this.registerForm)
   }
 
   //Implementado após o documento HTML for devolvido ao usuário
