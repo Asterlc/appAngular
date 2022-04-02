@@ -8,7 +8,16 @@
                 <label class="col-md-2 control-label" for="name">Nome completo</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="name" placeholder="Nome (Requerido)"
-                        formControlName="name">
+                        formControlName="name"
+                        [ngClass]="{'is-invalid': registerForm.get('name')?.errors && (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)}">
+                    <span class="text-danger"
+                        *ngIf="registerForm.get('name')?.errors?.required && (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)">
+                        <p>Campo obrigatório</p>
+                    </span>
+                    <span class="text-danger"
+                        *ngIf="registerForm.get('name')?.errors?.minlength && (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)">
+                        <p>No mínimo 5 caracteres</p>
+                    </span>
                 </div>
             </div>
             <div class="form-group">
@@ -16,6 +25,14 @@
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="document" placeholder="CPF (Requerido)"
                         formControlName="document">
+                    <span class="text-danger"
+                        *ngIf="registerForm.get('document')?.errors?.required && (registerForm.get('document')?.dirty || registerForm.get('document')?.touched) ">
+                        <p>Campo obrigatório</p>
+                    </span>
+                    <span class="text-danger"
+                        *ngIf="registerForm.get('document')?.errors?.maxlength && (registerForm.get('document')?.dirty || registerForm.get('document')?.touched) ">
+                        <p>Permitido até 11 caracteres</p>
+                    </span>
                 </div>
             </div>
             <div class="form-group">
@@ -23,13 +40,25 @@
                 <div class="col-md-10">
                     <input type="email" class="form-control" id="email" placeholder="E-mail (Requerido)"
                         formControlName="email">
+                    <span class="text-danger"
+                        *ngIf="registerForm.get('email')?.errors?.required && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched) ">
+                        <p>Campo obrigatório</p>
+                    </span>
+                    <span class="text-danger"
+                        *ngIf="registerForm.get('email')?.errors?.email && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched) ">
+                        <p>E-mail no formato inválido</p>
+                    </span>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-2 control-label" for="password">Senha</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="password" placeholder="Senha (Requerido)"
-                        formControlName="passsword">
+                        formControlName="password">
+                    <span class="text-danger"
+                        *ngIf="registerForm.get('password')?.errors && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched) ">
+                        <p>Campo obrigatório</p>
+                    </span>
                 </div>
             </div>
             <div class="form-group">
@@ -37,14 +66,28 @@
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="passwordConfirm"
                         placeholder="Confirmar senha (Requerido)" formControlName="passwordConfirm">
+                    <span class="text-danger"
+                        *ngIf="registerForm.get('passwordConfirm')?.errors && (registerForm.get('passwordConfirm')?.dirty || registerForm.get('passwordConfirm')?.touched) ">
+                        <p>Campo obrigatório</p>
+                    </span>
                 </div>
             </div>
-
             <div class="form-group">
                 <div class="col-md-4 cold-md-offset-2">
                     <span>
-                        <button class="btn btn-success" id="Registrar" type="submit">Registrar</button>
+                        <button class="btn btn-success" id="Registrar" type="submit" 
+                        [ngClass]="{'btn-light': !registerForm.valid}"
+                        [disabled]="!registerForm.valid"
+                        >Registrar</button>
                     </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-2">
+                    <p>Formulário Válido: {{registerForm.valid}} </p>
+                    <p>Formulário Tocado: {{registerForm.touched}}</p>
+                    <p>Formulário Sujo: {{registerForm.dirty}}</p> <br>
+                    <p>Formulário: {{formResult}} </p>
                 </div>
             </div>
         </div>
