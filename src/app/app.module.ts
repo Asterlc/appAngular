@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
-import { rootRoutesConfig } from './app.routes';
+import { AppRoutingModule, rootRoutesConfig } from './app.routes';
 import { APP_BASE_HREF } from '@angular/common';
 import { DataBindingComponent } from './demos/data-binding/data-binding.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,8 +12,6 @@ import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
 registerLocaleData(localePT);
 
-import { ProductsService } from './services/products.service';
-import { ProductsListComponent } from './products/products-list/products-list.component';
 import { RegisterComponent } from './demos/reactForms/register/register.component';
 
 import { NgBrazil } from 'ng-brazil';
@@ -27,7 +24,6 @@ import { AboutModule } from './about/aboutModule';
   declarations: [
     AppComponent,
     DataBindingComponent,
-    ProductsListComponent,
     RegisterComponent
   ],
   imports: [
@@ -35,16 +31,15 @@ import { AboutModule } from './about/aboutModule';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NavigationModule,
+    NavigationModule, //Módulos criados para a App
     AboutModule,
+    AppRoutingModule,
     NgBrazil,
     TextMaskModule,
-    CustomFormsModule,
-    [RouterModule.forRoot(rootRoutesConfig, { useHash: false })]
+    CustomFormsModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
-    ProductsService
   ],
   bootstrap: [AppComponent]
 })

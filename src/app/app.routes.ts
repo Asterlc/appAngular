@@ -1,3 +1,6 @@
+import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
+
 import { Routes } from "@angular/router";
 import { AboutComponent } from "./about/about/about.component";
 import { ContactComponent } from "./about/contact/contact.component";
@@ -12,7 +15,23 @@ export const rootRoutesConfig: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
     { path: 'features-data-binding', component: DataBindingComponent },
-    { path: 'product-list', component: ProductsListComponent },
+    {
+        path: 'product-list',
+        loadChildren: () => import('./products/productModule')
+        .then(m => m.ProductModule)//lazyLoad
+    },
     { path: 'product-detail/:id', component: ProductsListComponent },
     { path: 'register', component: RegisterComponent }
 ];
+
+@NgModule({
+    declarations: [],
+    imports: [
+        RouterModule.forRoot(rootRoutesConfig)
+    ],
+    exports: [
+        RouterModule
+    ]
+})
+
+export class AppRoutingModule { }
