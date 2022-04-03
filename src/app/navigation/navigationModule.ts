@@ -8,7 +8,6 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 
-
 //Metadata do component
 @NgModule({
     declarations: [
