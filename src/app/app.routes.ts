@@ -15,11 +15,7 @@ export const rootRoutesConfig: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
     { path: 'features-data-binding', component: DataBindingComponent },
-    {
-        path: 'product-list',
-        loadChildren: () => import('./products/productModule')
-        .then(m => m.ProductModule)//lazyLoad
-    },
+    { path: 'product-list', loadChildren: () => import('./products/productModule').then(m => m.ProductModule) }, //lazyLoad
     { path: 'product-detail/:id', component: ProductsListComponent },
     { path: 'register', component: RegisterComponent }
 ];
