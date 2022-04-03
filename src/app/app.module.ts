@@ -2,11 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-// import { MenuComponent } from './navigation/menu/menu.component';
-// import { HomeComponent } from './navigation/home/home.component';
-// import { FooterComponent } from './navigation/footer/footer.component';
-import { AboutComponent } from './about/about/about.component';
-import { ContactComponent } from './about/contact/contact.component';
+
 import { rootRoutesConfig } from './app.routes';
 import { APP_BASE_HREF } from '@angular/common';
 import { DataBindingComponent } from './demos/data-binding/data-binding.component';
@@ -25,12 +21,11 @@ import { NgBrazil } from 'ng-brazil';
 import { TextMaskModule } from 'angular2-text-mask';
 import { CustomFormsModule } from 'ng2-validation';
 import { NavigationModule } from './navigation/navigationModule';
+import { AboutModule } from './about/aboutModule';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
-    ContactComponent,
     DataBindingComponent,
     ProductsListComponent,
     RegisterComponent
@@ -41,6 +36,7 @@ import { NavigationModule } from './navigation/navigationModule';
     FormsModule,
     ReactiveFormsModule,
     NavigationModule,
+    AboutModule,
     NgBrazil,
     TextMaskModule,
     CustomFormsModule,
