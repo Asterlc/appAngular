@@ -10,7 +10,6 @@ export class GenericFormValidator {
                 let c = container.controls[controlKey];
                 if (c instanceof FormGroup) {
                     let childMessages = this.processMessage(c);
-                    console.log('childMessages', childMessages)
                     Object.assign(messages, childMessages);
                 } else if (this.validationMessages[controlKey]) {
                     messages[controlKey] = '';
