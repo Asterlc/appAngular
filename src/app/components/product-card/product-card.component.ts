@@ -9,17 +9,9 @@ import { Product } from '../../models/productModel';
 
 export class ProductCardComponent {
   @Input()
-  products: Product[]; // vem do component pai ?
+  products: Product[];
+  //Declarado no componente pai, redeclaramos no componente filho
+  //respeitando variável e tipos
 
-  // constructor(private productService: ProductsService) { }
-
-  // ngOnInit(): void {
-  //   this.productService.getProducts()
-  //     .subscribe(element => {
-  //       this.products = element
-  //       // console.log('element', element)
-  //     },
-  //       error => console.log(error)
-  //     );
-  // }
+  // products: any; Ou, respeitando variável e tipando dinamicamente
 }
