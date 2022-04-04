@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
 
     this.registerForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(150)]],
-      document: ['', [Validators.required, NgBrazilValidators.cpf]],
+      document: (['', [Validators.required, NgBrazilValidators.cpf]]),
       email: ['', [Validators.required, Validators.email]],
       password: pwd,
       passwordConfirm: confirmPWD,
@@ -81,6 +81,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
 
   createUser() {
     if (this.registerForm.dirty && this.registerForm.valid) {
+      this.registerForm.value.document = this.registerForm.value.document.replace(/\./g, '').replace(/\-/g, '')
       this.user = Object.assign({}, this.user, this.registerForm.value);
       this.formResult = JSON.stringify(this.registerForm.value);
       window.alert('Dados enviados com sucesso')
