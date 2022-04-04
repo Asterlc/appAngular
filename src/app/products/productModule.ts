@@ -9,7 +9,7 @@ import { ProductCardComponent } from "../components/product-card/product-card.co
 @NgModule({
     declarations: [
         ProductsListComponent,
-        ProductCardComponent
+        ProductCardComponent,
     ],
     imports: [
         CommonModule,
