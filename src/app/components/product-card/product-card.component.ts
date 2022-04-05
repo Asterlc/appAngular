@@ -10,6 +10,7 @@ import { Product } from '../../models/productModel';
 export class ProductCardComponent {
   @Input()
   products: Product[];
+  
   //Declarado no componente pai, redeclaramos no componente filho
   //respeitando variável e tipos
 
