@@ -1,5 +1,5 @@
 <div class="row text-center">
-    <div *ngFor="let product of products" class="col-md-4" style="padding-bottom: 30px;">
+    <div  style="padding-bottom: 15px;">
         <div class="card h-100">
             <a class="text-decoration-none" [routerLink]="['/produto-detail', product.id]">
                 <div style="align-content:center;">
@@ -9,12 +9,12 @@
             <h4 class="card-title">{{ product.originalName | titlecase }}</h4>
 
             <div [ngSwitch]="product.promotion">
-                <p *ngSwitchCase="true" style="font-size: 24px; color: red;">Promoção!</p>
+                <p *ngSwitchCase="true" style="font-size: 16px; color: red;">Promoção!</p>
                 <!-- <p *ngSwitchCase="false">Por apenas: {{product.promotion ? product.promotionPrice : product.listPrice}}</p> -->
             </div>
 
             <div [ngSwitch]="product.active">
-                <p *ngSwitchCase="false" style="font-size: 24px; color: red;">Produto indisponível no momento</p>
+                <p *ngSwitchCase="false" style="font-size: 16px; color: red;">Produto indisponível no momento</p>
             </div>
             <div *ngIf="product.promotion" class="card-body">
                 <div>

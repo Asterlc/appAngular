@@ -1,5 +1,7 @@
 <div class="container main-container">
     <div class="row text-center">
-        <app-product-card [products]="products" (status)="changeStatus($event)"></app-product-card>
+        <!-- <app-product-card [products]="products" (status)="changeStatus($event)"></app-product-card> -->
+        <app-product-card class="col-md-4" *ngFor="let product of products" [product]="product" (status)="changeStatus($event)"></app-product-card>
+        <!-- Iterando sobre o array de produtos e passando a propriedade da iteração para componente filho(card) -->
     </div>
 </div>

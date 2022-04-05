@@ -9,14 +9,14 @@ import { Product } from '../../models/productModel';
 
 export class ProductCardComponent {
   @Input()
-  products: Product[];
+  product: Product; //Recebe o objeto da iteração do pai.
 
   @Output()
   status: EventEmitter<any> = new EventEmitter();
 
 
   productEvent() {
-    this.status.emit(this.products);
+    this.status.emit(this.product);
   }
 
   //Declarado no componente pai, redeclaramos no componente filho
