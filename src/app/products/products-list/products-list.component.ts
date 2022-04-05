@@ -9,7 +9,7 @@ import { Product } from '../../models/productModel';
 })
 export class ProductsListComponent implements OnInit {
   products: Product[];
-  
+
   constructor(private productService: ProductsService) { }
 
   ngOnInit(): void {
@@ -20,5 +20,9 @@ export class ProductsListComponent implements OnInit {
       },
         error => console.log(error)
       );
+  }
+
+  changeStatus(event: Product) {
+    event.active = !event.active;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../models/productModel';
 
 @Component({
@@ -10,7 +10,15 @@ import { Product } from '../../models/productModel';
 export class ProductCardComponent {
   @Input()
   products: Product[];
-  
+
+  @Output()
+  status: EventEmitter<any> = new EventEmitter();
+
+
+  productEvent() {
+    this.status.emit(this.products);
+  }
+
   //Declarado no componente pai, redeclaramos no componente filho
   //respeitando variável e tipos
 

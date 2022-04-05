@@ -41,7 +41,7 @@
             "originalName": "Headset Microsoft",
             "listPrice": 10.98,
             "promotion": false,
-            "active": true,
+            "active": false,
             "promotionPrice": 0,
             "image": "headset.jpg"
         },
