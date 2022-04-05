@@ -1,5 +1,5 @@
 <div class="row text-center">
-    <div  style="padding-bottom: 15px;">
+    <div style="padding-bottom: 15px;">
         <div class="card h-100">
             <a class="text-decoration-none" [routerLink]="['/produto-detail', product.id]">
                 <div style="align-content:center;">
@@ -14,7 +14,8 @@
             </div>
 
             <div [ngSwitch]="product.active">
-                <p *ngSwitchCase="false" style="font-size: 16px; color: red;">Produto indisponível no momento</p>
+                <!-- <p *ngSwitchCase="false" style="font-size: 16px; color: red;">Produto indisponível no momento</p> -->
+                <ng-content *ngSwitchCase="false" select=".outOfStock"></ng-content>
             </div>
             <div *ngIf="product.promotion" class="card-body">
                 <div>
@@ -22,6 +23,7 @@
                         <small><del>{{ product.listPrice | currency:'BRL':true:'1.2-2':'pt'}}</del></small> <br>
                         Por: {{ product.promotionPrice | currency:'BRL':true:'1.2-2':'pt'}}
                     </h4>
+                    <ng-content select=".unlimitedTime"></ng-content>
                 </div>
             </div>
             <div *ngIf="!product.promotion && product.active" class="card-body">
