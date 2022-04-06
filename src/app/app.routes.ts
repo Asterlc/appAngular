@@ -7,6 +7,7 @@ import { ContactComponent } from "./about/contact/contact.component";
 import { DataBindingComponent } from "./demos/data-binding/data-binding.component";
 import { RegisterComponent } from "./demos/reactForms/register/register.component";
 import { HomeComponent } from "./navigation/home/home.component";
+import { NotFoundComponent } from "./navigation/not-found/not-found.component";
 import { ProductsListComponent } from "./products/products-list/products-list.component";
 
 export const rootRoutesConfig: Routes = [
@@ -17,7 +18,8 @@ export const rootRoutesConfig: Routes = [
     { path: 'features-data-binding', component: DataBindingComponent },
     { path: 'product-list', loadChildren: () => import('./products/productModule').then(m => m.ProductModule) }, //lazyLoad
     { path: 'product-detail/:id', component: ProductsListComponent },
-    { path: 'register', component: RegisterComponent }
+    { path: 'register', component: RegisterComponent },
+    { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
