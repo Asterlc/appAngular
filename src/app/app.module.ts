@@ -19,14 +19,13 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { CustomFormsModule } from 'ng2-validation';
 import { NavigationModule } from './navigation/navigationModule';
 import { AboutModule } from './about/aboutModule';
-import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductsService } from 'src/app/services/products.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     DataBindingComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
