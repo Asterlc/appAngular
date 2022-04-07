@@ -8,12 +8,19 @@ import { Observable } from "rxjs";
 })
 
 export class ProductsService {
+  productHelper: Object = {};
+  // product: Product;
   constructor(private http: HttpClient) { };
 
   protected baseURL = `http://localhost:3000`;
 
   getProducts(): Observable<Product[]> {
-    const product = this.http.get<Product[]>(`${this.baseURL}/products`);
-    return product;
+    const products = this.http.get<Product[]>(`${this.baseURL}/products`);
+    return products;
+  }
+
+  getProductById(id: number) {
+    this.http.get<Product>(`${this.baseURL}/products/${id}`).subscribe(data => Object.assign(this.productHelper, ...[data]));   
+    return this.productHelper;
   }
 }

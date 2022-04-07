@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Product } from 'src/app/models/productModel';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -6,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-
-  constructor() { }
+  //ActivatedRoute pega a rota ativa pelo roteamento do angular
+  product: any;
+  _id: number;
+  constructor(private route: ActivatedRoute, private productService: ProductsService) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => this._id = params['id']);
+    this.product = this.productService.getProductById(this._id)
+    console.log('this.product', this.product)
   }
 
 }

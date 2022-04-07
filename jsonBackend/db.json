@@ -28,7 +28,7 @@
             "image": "monitor.jpg"
         },
         {
-            "id": 3,
+            "id": 4,
             "originalName": "Laptop Asus",
             "listPrice": 3800.98,
             "promotion": true,
@@ -37,7 +37,7 @@
             "image": "laptop.jpg"
         },
         {
-            "id": 4,
+            "id": 5,
             "originalName": "Headset Microsoft",
             "listPrice": 10.98,
             "promotion": false,
@@ -46,7 +46,7 @@
             "image": "headset.jpg"
         },
         {
-            "id": 5,
+            "id": 6,
             "originalName": "Webcam Logitech",
             "listPrice": 90.98,
             "promotion": false,
@@ -55,7 +55,7 @@
             "image": "webcam.jpg"
         },
         {
-            "id": 6,
+            "id": 7,
             "originalName": "Galaxy S10",
             "listPrice": 1800.98,
             "promotion": true,
