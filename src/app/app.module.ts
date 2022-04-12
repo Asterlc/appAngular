@@ -20,6 +20,7 @@ import { CustomFormsModule } from 'ng2-validation';
 import { NavigationModule } from './navigation/navigationModule';
 import { AboutModule } from './about/aboutModule';
 import { ProductsService } from 'src/app/services/products.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ProductsService } from 'src/app/services/products.service';
     AppRoutingModule,
     NgBrazil,
     TextMaskModule,
-    CustomFormsModule
+    CustomFormsModule,
+    NgbModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
