@@ -1,11 +1,18 @@
 import { Injectable } from '@angular/core';
-import { NgbAlertConfig, NgbDateParserFormatter, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
+  constructor(public modalService: NgbModal) { }
 
-  constructor() { }
+  openModal(content: any, options = {}) {
+    return this.modalService.open(content, options);
+  }
+
+  dismissModal() {
+    return this.modalService.dismissAll();
+  }
 }

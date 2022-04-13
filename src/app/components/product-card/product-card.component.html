@@ -32,14 +32,35 @@
                 </div>
             </div>
             <div class="card-footer">
-                <a class="btn btn-primary" (click)="productEvent()" [routerLink]="">
-                    <span class="fa fa-shopping-cart"></span> Comprar
+                <a [routerLink]="">
+                    <span class="fa fa-shopping-cart" >
+                        <button class="btn btn-primary" (click)="addCart(product)">Comprar</button>
+                    </span>
                 </a>
                 &nbsp;
-                <a class="btn btn-success" style="color:white" [routerLink]="['details/', product.id]" routerLinkActive="router-link-active" >
+                <a class="btn btn-success" style="color:white" [routerLink]="['details/', product.id]"
+                    routerLinkActive="router-link-active">
                     <span class="fa fa-shopping-cart"></span> Detalhes
                 </a>
+                <!-- <button type="button" (click)="openModalMiniCart()">Teste Modal</button> -->
             </div>
         </div>
     </div>
 </div>
+
+<ng-template #modalMiniCart let-modal>
+    <div class="modal-header">
+        <h3 class="modal-title d-flex w-100">
+            <div class="bg-minicart-title rounded-circle">
+                <i class="ion ion-md-cart text-white text-tiny">&nbsp;</i>
+            </div>
+            <h3>Seu Carrinho</h3>
+        </h3>
+        <button type="button" class="close" (click)="modal.dismiss('cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div *ngFor="let el of items; let i = index">
+        <div class="text-left">{{el.originalName}}</div>
+    </div>
+</ng-template>
