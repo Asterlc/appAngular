@@ -16,9 +16,9 @@ export class ProductCardComponent implements AfterViewInit {
     public appService: AppService,
     private attendanceService: AttendanceService
   ) { }
-  
+
   ngAfterViewInit(): void {
-   this.getItems();
+    this.getItems();
   }
 
   @Input()
@@ -49,8 +49,8 @@ export class ProductCardComponent implements AfterViewInit {
       return;
     }
     this.attendanceService.createAttendance(item);
-    this.getItems();
     this.openModalMiniCart();
+    this.getItems();
   }
 
   getItems(): Attendance[] {
