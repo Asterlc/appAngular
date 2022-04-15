@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Product } from 'src/app/models/productModel';
 import { ProductsService } from 'src/app/services/products.service';
-
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -19,5 +16,4 @@ export class ProductDetailComponent implements OnInit {
     this.route.params.subscribe(params => this._id = params['id']);
     this.product = this.productService.getProductById(this._id)
   }
-
 }

@@ -1,19 +1,23 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { RouterModule } from "@angular/router";
 
 import { AdminComponent } from "./admin.component";
+import { AdminRoutesConfig } from "./admin.routes";
+import { AuthGuardService } from "src/app/services/app.guard";
 
 @NgModule({
     declarations: [
         AdminComponent
     ],
     imports: [
-        RouterModule,
-        CommonModule
+        CommonModule,
+        AdminRoutesConfig
     ],
     exports: [
         AdminComponent
+    ],
+    providers: [
+        AuthGuardService
     ]
 })
 

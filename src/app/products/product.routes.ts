@@ -4,7 +4,6 @@ import { RouterModule, Routes } from "@angular/router";
 import { ProductsListComponent } from "./products-list/products-list.component";
 import { ProductDetailComponent } from "../components/product-detail/product-detail.component";
 import { ProductAppComponent } from "./productAppComponent";
-// import { NotFoundComponent } from "../navigation/not-found/not-found.component";
 
 const productRouterConfig: Routes = [
 
@@ -15,7 +14,6 @@ const productRouterConfig: Routes = [
         ]
     }
 ]
-
 @NgModule({
     imports: [
         RouterModule.forChild(productRouterConfig)
