@@ -15,13 +15,12 @@ export class ProductsService {
   protected baseURL = `http://localhost:3000`;
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.baseURL}/products`);
+    const products = this.http.get<Product[]>(`${this.baseURL}/products`);
+    return products;
   }
 
   getProductById(id: number) {
-    return this.http.get<Product>(`${this.baseURL}/products/${id}`).subscribe(data => {
-      Object.assign(this.productHelper, ...[data]);
-      return this.productHelper;
-    });
+    this.http.get<Product>(`${this.baseURL}/products/${id}`).subscribe(data => Object.assign(this.productHelper, ...[data]));   
+    return this.productHelper;
   }
 }
