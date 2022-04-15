@@ -17,16 +17,13 @@ export class ProductsListComponent implements OnInit, AfterViewInit {
   @ViewChild('test', { static: false }) screenMessage: ElementRef;
   ngOnInit(): void {
     this.productService.getProducts()
-      .subscribe(element => {
-        this.products = element
-        // console.log('element', element)
-      },
+      .subscribe(element => this.products = element,
         error => console.log(error)
       );
   }
   ngAfterViewInit(): void {
     let clickTxt: Observable<any> = fromEvent(this.screenMessage.nativeElement, 'click');
-    clickTxt.subscribe(()=>{
+    clickTxt.subscribe(() => {
       alert('Seja bem-vindo !')
     })
   }
