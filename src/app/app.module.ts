@@ -21,6 +21,7 @@ import { NavigationModule } from './navigation/navigationModule';
 import { AboutModule } from './about/aboutModule';
 import { ProductsService } from 'src/app/services/products.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdminRouteConfig } from './admin/admin.routes';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NavigationModule, //Módulos criados para a App
     AboutModule,
     AppRoutingModule,
+    AdminRouteConfig,
     NgBrazil,
     TextMaskModule,
     CustomFormsModule,

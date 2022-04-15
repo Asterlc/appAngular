@@ -8,6 +8,7 @@ import { DataBindingComponent } from "./demos/data-binding/data-binding.componen
 import { RegisterComponent } from "./demos/reactForms/register/register.component";
 import { HomeComponent } from "./navigation/home/home.component";
 import { NotFoundComponent } from "./navigation/not-found/not-found.component";
+import { AuthGuard } from "./services/app.guard";
 
 export const rootRoutesConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,6 +19,7 @@ export const rootRoutesConfig: Routes = [
     { path: 'product-list', loadChildren: () => import('./products/productModule').then(m => m.ProductModule) }, //lazyLoad
     // { path: 'product-detail/:id', component: ProductsListComponent },
     { path: 'register', component: RegisterComponent },
+    { path: 'admin', loadChildren: () => import('./admin/adminModule').then(m => m.AdminModule), canLoad: [AuthGuard] },
     { path: '**', component: NotFoundComponent }
 ];
 
