@@ -15,12 +15,14 @@ import { NgBrazil } from 'ng-brazil';
 import { TextMaskModule } from 'angular2-text-mask';
 import { CustomFormsModule } from 'ng2-validation';
 import { NavigationModule } from './navigation/navigationModule';
-import { AboutModule } from './about/aboutModule';
+import { AboutModule } from './about/about.module';
 import { ProductsService } from 'src/app/services/products.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AuthGuardService } from './services/app.guard';
+import { AuthGuardService } from './services/guards/app.guard';
 import { RegisterComponent } from './demos/reactForms/register/register.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { RegisterGuard } from './services/guards/register.guard';
+import { MoviesComponent } from './movies/movies.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,8 @@ import { AdminComponent } from './components/admin/admin.component';
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
     ProductsService,
-    AuthGuardService
+    AuthGuardService,
+    RegisterGuard
   ],
   bootstrap: [AppComponent]
 })

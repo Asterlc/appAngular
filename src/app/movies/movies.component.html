@@ -1,0 +1,24 @@
+<div class="container main-container">
+    <h1>Filmes</h1>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Nome</th>
+                <th scope="col">Data de Lançamento</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Tamanho do Arquivo</th>
+            </tr>
+        </thead>    
+        <tbody>
+            <tr *ngFor="let item of movies">
+                <img [src]="item.image" style="padding-bottom: 5px;" alt="Imagem do Filme">
+                <td>{{item.name}}</td>
+                <td>{{item.releaseDate}}</td>
+                <td>{{item.listPrice}}</td>
+                <td>{{item.movieSize}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

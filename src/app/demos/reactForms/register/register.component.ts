@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   validationMessages: ValidationMessages;
   genericValidator: GenericFormValidator;
   displayMessage: DisplayMessage = {};
+  notSavedChanges: Boolean;
 
   constructor(private fb: FormBuilder) {
     this.validationMessages = {
@@ -76,14 +77,16 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     //Irá realizar merge para todos os focos disponíveis no formulário.  
     merge(...controlBlurs).subscribe(() => {
       this.displayMessage = this.genericValidator.processMessage(this.registerForm);
+      this.notSavedChanges = true;
     });
   };
 
   createUser() {
     if (this.registerForm.dirty && this.registerForm.valid) {
-      this.registerForm.value.document = this.registerForm.value.document.replace(/\./g, '').replace(/\-/g, '')
+      this.registerForm.value.document = this.registerForm.value.document.replace(/\./g, '').replace(/\-/g, '');
       this.user = Object.assign({}, this.user, this.registerForm.value);
       this.formResult = JSON.stringify(this.registerForm.value);
+      this.notSavedChanges = false;
       window.alert('Dados enviados com sucesso')
     } else {
       window.alert('Preencha os campos obrigatórios')

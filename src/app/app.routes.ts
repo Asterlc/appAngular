@@ -1,14 +1,17 @@
+//ANGULAR DEPENDENCIES
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-
 import { Routes } from "@angular/router";
+//COMPONENTS
 import { AboutComponent } from "./about/about/about.component";
 import { ContactComponent } from "./about/contact/contact.component";
 import { DataBindingComponent } from "./demos/data-binding/data-binding.component";
 import { RegisterComponent } from "./demos/reactForms/register/register.component";
 import { HomeComponent } from "./navigation/home/home.component";
 import { NotFoundComponent } from "./navigation/not-found/not-found.component";
-import { AuthGuardService } from "./services/app.guard";
+//GUARDS
+import { AuthGuardService } from "./services/guards/app.guard";
+import { RegisterGuard } from "./services/guards/register.guard";
 
 export const rootRoutesConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,9 +19,9 @@ export const rootRoutesConfig: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
     { path: 'features-data-binding', component: DataBindingComponent },
-    { path: 'product-list', loadChildren: () => import('./products/productModule').then(m => m.ProductModule) }, //lazyLoad
-    // { path: 'product-detail/:id', component: ProductsListComponent },
-    { path: 'register', component: RegisterComponent },
+    { path: 'product-list', loadChildren: () => import('./products/product.module').then(m => m.ProductModule) }, //lazyLoad
+    { path: 'movies', loadChildren: () => import('./movies/movies.module').then(m => m.MoviesModule) },
+    { path: 'register', component: RegisterComponent, canDeactivate: [RegisterGuard] },
     {
         path: 'admin',
         loadChildren: () => import(`./components/admin/adminModule`).then(m => m.AdminModule),
@@ -37,7 +40,8 @@ export const rootRoutesConfig: Routes = [
         RouterModule
     ],
     providers: [
-        AuthGuardService
+        AuthGuardService,
+        RegisterGuard
     ]
 })
 
