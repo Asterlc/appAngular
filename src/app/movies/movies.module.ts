@@ -8,7 +8,7 @@ import { FileSizePipe } from "../components/Pipes/fileSizePipe";
 @NgModule({
     declarations: [
         MoviesComponent,
-        FileSizePipe
+        FileSizePipe //DECLARAR PIPES CUSTOMIZADOS JUNTOS AO MÓDULO DO COMPONENTE
     ],
     imports: [
         CommonModule
@@ -19,7 +19,6 @@ import { FileSizePipe } from "../components/Pipes/fileSizePipe";
     ],
     providers: [
         MovieService,
-        FileSizePipe
     ]
 })
 
