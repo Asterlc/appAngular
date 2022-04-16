@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageFormatPipe } from '../components/Pipes/imageFormat.pipe';
 import { Movie } from '../models/moviesModel';
 import { MovieService } from '../services/movie.service';
 @Component({

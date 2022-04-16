@@ -7,7 +7,7 @@ import { Attendance } from '../models/attendanceModel';
   providedIn: 'root'
 })
 export class AttendanceService {
-  attendanceHelper: Object = {};
+  attendanceHelper: Attendance;
   constructor(private http: HttpClient) { }
 
   protected baseURL = `http://localhost:3000`;
@@ -22,8 +22,8 @@ export class AttendanceService {
   //   return this.attendanceHelper;
   // }
 
-  createAttendance(body: Object) {
-    this.http.post<Attendance>(`${this.baseURL}/attendance`, body).subscribe(data => {
+  createAttendance(body: Object): Attendance {
+    this.http.post<Observable<Attendance>>(`${this.baseURL}/attendance`, body).subscribe(data => {
       Object.assign(this.attendanceHelper, ...[data])
     });
     return this.attendanceHelper;

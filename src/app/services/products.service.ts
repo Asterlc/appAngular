@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 })
 
 export class ProductsService {
-  productHelper: Object = {};
+  productHelper: Product;
   // product: Product;
   constructor(private http: HttpClient) { };
 
@@ -19,8 +19,8 @@ export class ProductsService {
     return products;
   }
 
-  getProductById(id: number) {
-    this.http.get<Product>(`${this.baseURL}/products/${id}`).subscribe(data => Object.assign(this.productHelper, ...[data]));   
+  getProductById(id: number): Product {
+    this.http.get<Observable<Product>>(`${this.baseURL}/products/${id}`).subscribe(data => Object.assign(this.productHelper, ...[data]));
     return this.productHelper;
   }
 }

@@ -21,6 +21,7 @@ export const rootRoutesConfig: Routes = [
     { path: 'features-data-binding', component: DataBindingComponent },
     { path: 'product-list', loadChildren: () => import('./products/product.module').then(m => m.ProductModule) }, //lazyLoad
     { path: 'movies', loadChildren: () => import('./movies/movies.module').then(m => m.MoviesModule) },
+    { path: 'bar', loadChildren: () => import('./demos/di-zones/bar/bar.module').then(m => m.BarModule) },
     { path: 'register', component: RegisterComponent, canDeactivate: [RegisterGuard] },
     {
         path: 'admin',

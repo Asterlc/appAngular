@@ -1,0 +1,22 @@
+<div class="container main-container col-md-4" >
+    <div class="row text-center">
+        <div style="padding-bottom: 5px;" *ngFor="let drink of barDrinks">
+            <div class="card h-100">
+                <a class="text-decoration-none">
+                    <div style="align-content:center;">
+                        <img src="/assets/{{ drink.image }}" height="150px" width="150px" alt="">
+                    </div>
+                </a>
+                <div class="card-title">
+                    <h4>{{ drink.drinkName | titlecase }}</h4>
+                </div>
+                <div class="card-body">
+                    <h4>{{drink.listPrice | currency:'BRL':true:'1.2-2':'pt'}}</h4>
+                </div>
+                <div class="card-body">
+                    <h4>{{drink.ingredients }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

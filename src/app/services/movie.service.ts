@@ -8,17 +8,17 @@ import { Movie } from '../models/moviesModel';
   providedIn: 'root'
 })
 export class MovieService {
-  movieHelper: Object = {}
+  movieHelper: Movie;
   protected baseURL = `http://localhost:3000`;
   constructor(private http: HttpClient) { }
 
-  getMovies() {
+  getMovies(): Observable<Movie[]> {
     const movies = this.http.get<Movie[]>(`${this.baseURL}/movies`);
     return movies;
   }
 
-  getMovieById(id: number) {
-    this.http.get<Movie>(`${this.baseURL}/movies/${id}`).subscribe(data => Object.assign(this.movieHelper, ...[data]));
+  getMovieById(id: number): Movie {
+    this.http.get<Observable<Movie>>(`${this.baseURL}/movies/${id}`).subscribe(data => Object.assign(this.movieHelper, ...[data]));
     return this.movieHelper;
   }
 }

@@ -79,7 +79,7 @@
       "name": "O Poderoso Chefão",
       "releaseDate": "01/12/1972",
       "image": "poderosoChefao.jpg",
-      "movieSize": 513326980,
+      "movieSize": 546546454,
       "listPrice": 38.98
     },
     {
@@ -89,6 +89,55 @@
       "image": "click.jpg",
       "movieSize": 51358964125,
       "listPrice": 38.98
+    }
+  ],
+  "drinks": [
+    {
+      "id": 1,
+      "drinkName": "Margarita",
+      "listPrice": 19.99,
+      "ingredients": [
+        "Tequila",
+        "Limão",
+        "Licor de Laranja"
+      ],
+      "image":"margarita.jpg"
+    },
+    {
+      "id": 2,
+      "drinkName": "Cosmopolitan",
+      "listPrice": 25.90,
+      "ingredients": [
+        "Vodka",
+        "Limão",
+        "Xarope de Cranberry",
+        "Licor de Laranja"
+      ],
+      "image":"cosmopolitan.jpg"
+    },
+    {
+      "id": 3,
+      "drinkName": "Caipirinha",
+      "listPrice": 19.90,
+      "ingredients": [
+        "Cachaça",
+        "Limão",
+        "Açúcar"
+      ],
+      "image":"caipirinha.jpg"
+    },
+    {
+      "id": 4,
+      "drinkName": "Negroni",
+      "listPrice": 25.90,
+      "ingredients": [
+        "Gin",
+        "Campari",
+        "Angostura",
+        "Vermute",
+        "Rodela de Laranja"
+      ],
+      "image":"negroni.jpg"
     }
   ]
 }
