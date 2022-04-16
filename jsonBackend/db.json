@@ -71,7 +71,7 @@
       "name": "Um Sonho de Liberdade",
       "releaseDate": "12/01/1994",
       "image": "sonhoLiberdade.jpg",
-      "movieSize": "513326980",
+      "movieSize": 513326980,
       "listPrice": 38.98
     },
     {
@@ -79,7 +79,7 @@
       "name": "O Poderoso Chefão",
       "releaseDate": "01/12/1972",
       "image": "poderosoChefao.jpg",
-      "movieSize": "513326980",
+      "movieSize": 513326980,
       "listPrice": 38.98
     },
     {
@@ -87,7 +87,7 @@
       "name": "Matrix",
       "releaseDate": "11/07/2006",
       "image": "click.jpg",
-      "movieSize": "513326980",
+      "movieSize": 513326980,
       "listPrice": 38.98
     }
   ]

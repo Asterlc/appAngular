@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../models/moviesModel';
 import { MovieService } from '../services/movie.service';
-
+import { FileSizePipe } from '../components/Pipes/fileSizePipe';
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
@@ -13,7 +13,7 @@ export class MoviesComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
-this.movieService.getMovies()
+    this.movieService.getMovies()
       .subscribe(element => {
         this.movies = element
       },

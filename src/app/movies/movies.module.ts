@@ -3,10 +3,12 @@ import { CommonModule } from "@angular/common";
 import { MovieService } from "../services/movie.service";
 import { MoviesComponent } from "./movies.component";
 import { MoviesRoutesConfig } from "./movies.routes";
+import { FileSizePipe } from "../components/Pipes/fileSizePipe";
 
 @NgModule({
     declarations: [
-        MoviesComponent
+        MoviesComponent,
+        FileSizePipe
     ],
     imports: [
         CommonModule
@@ -16,7 +18,8 @@ import { MoviesRoutesConfig } from "./movies.routes";
         MoviesRoutesConfig
     ],
     providers: [
-        MovieService
+        MovieService,
+        FileSizePipe
     ]
 })
 

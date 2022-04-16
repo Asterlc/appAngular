@@ -10,14 +10,14 @@
                 <th scope="col">Valor</th>
                 <th scope="col">Tamanho do Arquivo</th>
             </tr>
-        </thead>    
+        </thead>
         <tbody>
             <tr *ngFor="let item of movies">
                 <img [src]="item.image" style="padding-bottom: 5px;" alt="Imagem do Filme">
-                <td>{{item.name}}</td>
-                <td>{{item.releaseDate}}</td>
-                <td>{{item.listPrice}}</td>
-                <td>{{item.movieSize}}</td>
+                <td>{{item.name | titlecase}}</td>
+                <td>{{item.releaseDate | date:"dd/MM/yyyy"}}</td>
+                <td>{{item.listPrice | currency:'BRL':true:'1.2-2':'pt'}}</td>
+                <td>{{item.movieSize | fileSize}}</td>
             </tr>
         </tbody>
     </table>
