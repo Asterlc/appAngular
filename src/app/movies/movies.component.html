@@ -13,7 +13,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of movies">
-                <img [src]="item.image" style="padding-bottom: 5px;" alt="Imagem do Filme">
+                <img [attr.src]="item.image | imageFormat:'default':true" style="padding-bottom: 5px;"
+                    [alt]="item.image">
                 <td>{{item.name | titlecase}}</td>
                 <td>{{item.releaseDate | date:"dd/MM/yyyy"}}</td>
                 <td>{{item.listPrice | currency:'BRL':true:'1.2-2':'pt'}}</td>
