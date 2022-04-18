@@ -19,6 +19,7 @@ registerLocaleData(localePT);
 //MÓDULOS CRIADOS
 import { NavigationModule } from './navigation/navigationModule';
 import { AboutModule } from './about/about.module';
+import { BarModule } from './demos/di-zones/bar/bar.module';
 //LIBS INSIDE ANGULAR
 import { NgBrazil } from 'ng-brazil';
 import { TextMaskModule } from 'angular2-text-mask';
@@ -38,6 +39,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NavigationModule, //Módulos criados para a App
     AboutModule,
     AppRoutingModule,
+    BarModule.forRoot({
+      storeID: 1,
+      storeToken: 'TokenTest'
+    }),
     NgBrazil,
     TextMaskModule,
     CustomFormsModule,

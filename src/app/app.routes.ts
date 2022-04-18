@@ -9,6 +9,7 @@ import { DataBindingComponent } from "./demos/data-binding/data-binding.componen
 import { RegisterComponent } from "./demos/reactForms/register/register.component";
 import { HomeComponent } from "./navigation/home/home.component";
 import { NotFoundComponent } from "./navigation/not-found/not-found.component";
+import { DiZonesComponent } from './demos/di-zones/di-zones.component'
 //GUARDS
 import { AuthGuardService } from "./services/guards/app.guard";
 import { RegisterGuard } from "./services/guards/register.guard";
@@ -21,7 +22,8 @@ export const rootRoutesConfig: Routes = [
     { path: 'features-data-binding', component: DataBindingComponent },
     { path: 'product-list', loadChildren: () => import('./products/product.module').then(m => m.ProductModule) }, //lazyLoad
     { path: 'movies', loadChildren: () => import('./movies/movies.module').then(m => m.MoviesModule) },
-    { path: 'bar', loadChildren: () => import('./demos/di-zones/bar/bar.module').then(m => m.BarModule) },
+    // { path: 'bar', loadChildren: () => import('./demos/di-zones/bar/bar.module').then(m => m.BarModule) },
+    { path: 'bar', component: DiZonesComponent },
     { path: 'register', component: RegisterComponent, canDeactivate: [RegisterGuard] },
     {
         path: 'admin',

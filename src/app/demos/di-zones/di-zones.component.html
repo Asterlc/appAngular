@@ -1,8 +1,11 @@
 <div class="container main-container col-md-4" >
     <div class="row text-center">
-        <div style="padding-bottom: 5px;" *ngFor="let drink of barDrinks">
+        <!-- *ngFor="let drink of barDrinks" -->
+        <div style="padding-bottom: 5px;" >
             <div class="card h-100">
-                <a class="text-decoration-none">
+                <h5>Unidade Manual: {{configManual.storeID}} - Token: {{configManual.storeToken}}</h5>
+                <h5>Unidade Dinâmica: {{dinamic.storeID}} - Token: {{dinamic.storeToken}}</h5>
+                <!-- <a class="text-decoration-none">
                     <div style="align-content:center;">
                         <img src="/assets/{{ drink.image }}" height="150px" width="150px" alt="">
                     </div>
@@ -15,7 +18,7 @@
                 </div>
                 <div class="card-body">
                     <h4>{{drink.ingredients }}</h4>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
